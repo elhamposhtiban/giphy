@@ -1,0 +1,28 @@
+* { 
+    font-family: 'Be Vietnam', sans-serif;
+    font-family: 'Lora', serif;
+}
+
+.jumbotron {
+    opacity: 0.9;
+    color: rgb(53, 36, 61);
+    background-color: rgb(148, 131, 163);
+    margin-top: 30px;
+}
+
+.container {
+    width: 1000px;
+    height:900px;
+    background-color: rgb(99, 86, 110); 
+}
+
+.btn {
+    padding: 15px;
+    font-size: 15px;
+    background-color: rgb(228, 207, 20);
+}
+
+label {
+    font-size: 20px ;
+    color: rgb(53, 36, 61);
+}
