@@ -3,6 +3,11 @@
     font-family: 'Lora', serif;
 }
 
+label {
+    font-size: 20px ;
+    color: rgb(53, 36, 61);
+}
+
 .jumbotron {
     opacity: 0.9;
     color: rgb(53, 36, 61);
@@ -16,13 +21,22 @@
     background-color: rgb(99, 86, 110); 
 }
 
+#more-buttons {
+    padding: 12px;
+    margin: 8px 8px 8px 8px;
+    font-size: 13px;
+    background-color: rgb(228, 207, 20);
+}
+
 .btn {
     padding: 15px;
     font-size: 15px;
     background-color: rgb(228, 207, 20);
 }
 
-label {
-    font-size: 20px ;
-    color: rgb(53, 36, 61);
+#buttons-view {
+    width: 70%;
+    margin: -66px -7px 71px 151px;
+    padding: 11px;
+    float: left;
 }
