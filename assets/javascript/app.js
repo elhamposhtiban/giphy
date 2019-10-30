@@ -6,7 +6,7 @@ function displayAnimationInfo () {
 
     const animation = $(this).attr("data-name");
     const APIKey = "PH3KRjup1KQ8EayuI8G0JSJYv4XM4jPN";
-    const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animation}&api_key=${APIKey}&limit=10`;
+    const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animation}&api_key=${APIKey}&rating=PG&limit=10`;
 
     $.ajax ({
     url: queryURL,
@@ -14,7 +14,8 @@ function displayAnimationInfo () {
     }).then(function(response) {
 
         $("#gif-view").empty();
-        console.log (queryURL);
+        // console.log (queryURL);
+
         result = response.data;
         for(let i=0; i<result.length; i++) {
 
@@ -22,10 +23,11 @@ function displayAnimationInfo () {
            state = $gif.attr("data-state", "still")
            $gif.attr("data-animate", result[i].images.fixed_width.url)
            $gif.attr("data-still", result[i].images.fixed_width_still.url)
-            $gif.addClass("active-gif")
+           $gif.attr("id", "picture")
+           $gif.addClass("active-gif")
              $("#gif-view").append($gif);
-            //  AnimatePause();
-        }
+      
+            }
      
   });
  
@@ -45,26 +47,22 @@ function renderButtons () {
       $("#buttons-view").append(bt);
 
     }
-}
+};
 
       // This function handles events where one button is clicked
       $("#add-button").on("click", function(event) {
+
         event.preventDefault();
-
-        // This line grabs the input from the textbox
         const newAnimation = $("#gif-input").val().trim();
-
-        // Adding the movie from the textbox to our array
         animations.push(newAnimation);
-        // console.log(animations);
         renderButtons();
-
 
       });
  
     function AnimatePause() {
+
       let state = $(this).attr("data-state");
-      console.log(state)
+    //   console.log(state)
       if(state === "still") {
           $(this).attr("src", $(this).attr("data-animate"));
           $(this).attr("data-state", "animate");
@@ -74,7 +72,7 @@ function renderButtons () {
       }
     };
 
-      // Function for displaying gifs
+      // Function for displaying gifs & pausing gif
       $(document).on("click", ".animation", displayAnimationInfo);
       $(document).on("click", ".active-gif", AnimatePause);
 
