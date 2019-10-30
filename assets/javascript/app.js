@@ -18,8 +18,8 @@ function displayAnimationInfo () {
         result = response.data;
         for(let i=0; i<result.length; i++) {
 
-            const $gif = $("<img>").attr("src", result[i].images.fixed_width.url)
-           const state = $gif.attr("data-state", "still")
+            const $gif = $("<img>").attr("src", result[i].images.fixed_width_still.url)
+           state = $gif.attr("data-state", "still")
            $gif.attr("data-animate", result[i].images.fixed_width.url)
            $gif.attr("data-still", result[i].images.fixed_width_still.url)
             $gif.addClass("active-gif")
@@ -64,6 +64,7 @@ function renderButtons () {
  
     function AnimatePause() {
       let state = $(this).attr("data-state");
+      console.log(state)
       if(state === "still") {
           $(this).attr("src", $(this).attr("data-animate"));
           $(this).attr("data-state", "animate");
