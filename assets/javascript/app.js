@@ -1,12 +1,12 @@
 
 //here we declare one arrays of our gif
 const animations = ["up", "frozen", "toy story", "incredibles"];
-
+$(document).ready(function(){
 function displayAnimationInfo () {
 
     const animation = $(this).attr("data-name");
     const APIKey = "PH3KRjup1KQ8EayuI8G0JSJYv4XM4jPN";
-    const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animation}&api_key=${APIKey}&rating=PG&limit=10`;
+    const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animation}&api_key=${APIKey}&rating=PG&limit=12`;
 
     $.ajax ({
     url: queryURL,
@@ -77,3 +77,4 @@ function renderButtons () {
       $(document).on("click", ".active-gif", AnimatePause);
 
       renderButtons();
+});

@@ -3,15 +3,19 @@
     font-family: 'Lora', serif;
 }
 
+body {
+ background-color: rgb(53, 36, 61);
+}
+
 label {
     font-size: 20px ;
     color: rgb(53, 36, 61);
 }
 
 .jumbotron {
-    opacity: 0.9;
     color: rgb(53, 36, 61);
     background-color: rgb(148, 131, 163);
+    opacity: 0.8;
     margin-top: 30px;
 }
 
