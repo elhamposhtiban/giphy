@@ -62,7 +62,7 @@ function renderButtons () {
     function AnimatePause() {
 
       let state = $(this).attr("data-state");
-    //   console.log(state)
+     //console.log(state)
       if(state === "still") {
           $(this).attr("src", $(this).attr("data-animate"));
           $(this).attr("data-state", "animate");
